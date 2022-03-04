@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
                 parsedData.push(newNote);
                 // Write updated notes back to the file
                 fs.writeFile("./db/db.json", JSON.stringify(parsedData, null, 4), (err) =>
-                    err ? console.error(err) : console.info("Successfully added note!"));
+                    err ? console.error(err) : console.info("Successfully added note!"));          
             }
         });
 
@@ -61,7 +61,27 @@ router.post("/", (req, res) => {
 
 // Delete route for a specific note
 router.delete("/:id", (req, res) => {
+    const noteId = req.params.id;
 
+    // Read all the notes from the file
+    fs.readFile("./db/db.json", (err, data) => {
+        if (err) {
+            console.err(err);
+        }
+        else {
+            const parsedData = JSON.parse(data);
+
+            // Make a new array of all notes except the one with the id provided in the URL
+            const result = parsedData.filter(note => note.note_id !== noteId);
+
+            // Rewrite the notes to db.json file
+            fs.writeFile("./db/db.json", JSON.stringify(result, null, 4), err => 
+                err ? console.error(err) : console.log("Successfully updated")
+            );
+
+            res.json(`Successfully deleted note with id: ${noteId}`);
+        }
+    });
 });
 
 module.exports = router;

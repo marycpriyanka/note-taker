@@ -71,11 +71,17 @@ router.delete("/:id", (req, res) => {
         else {
             const parsedData = JSON.parse(data);
 
+            // Checks whether there is a note with the given id
+            const noteToDelete = parsedData.filter(note => note.note_id === noteId)
+            if(noteToDelete.length === 0) {
+                return res.json("No note with that id");
+            }
+
             // Make a new array of all notes except the one with the id provided in the URL
-            const result = parsedData.filter(note => note.note_id !== noteId);
+            const updatedData = parsedData.filter(note => note.note_id !== noteId);
 
             // Rewrite the notes to db.json file
-            fs.writeFile("./db/db.json", JSON.stringify(result, null, 4), err => 
+            fs.writeFile("./db/db.json", JSON.stringify(updatedData, null, 4), err => 
                 err ? console.error(err) : console.log("Successfully updated")
             );
 

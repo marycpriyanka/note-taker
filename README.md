@@ -12,7 +12,7 @@ Note Taker is an application used to write, save and delete notes. This is very 
 - [Technologies used](#technologies-used)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
-- [Tests](#tests)
+- [Deployed link](#deployed-link)
 - [Questions](#questions)
 
 ## Installation
@@ -21,7 +21,23 @@ Install express and uuid from npm using the commands 'npm i express' and 'npm i 
 
 ## Usage
 
-Use the live Heroku URL to open the deployed application. You will be presented with a landing page with a link to notes page. Click on the link to the notes page. Then user will be presented with a page with existing notes listed in the left hand column, plus empty fields to enter a new note title and note's text in the right hand column. When user enters the new note title and the note's text, a Save icon appears in the navigation at the top of the page. Clicking the Save icon will save the new note entered.  The saved note will then appear in the left hand column with the other existing notes. User can delete any existing note by clicking on the Delete icon next to the respective note title in the list in the left hand column. If user clicks on an existing note in the left hand column, that note will appear in the right hand column. When the Write icon or the + icon in the navigation at the top of the page is clicked, then user is presented with empty fields to enter a new note title and the note's text in the right hand column.
+Use the live Heroku URL to open the deployed application. You will be presented with a landing page with a link to notes page. 
+
+![initialPage](https://github.com/marycpriyanka/note-taker/blob/main/public/assets/screenshots/InitialPage.JPG)
+
+Click on the link to the notes page. Then user will be presented with a page with existing notes listed in the left hand column, plus empty fields to enter a new note title and note's text in the right hand column. 
+
+![notes](https://github.com/marycpriyanka/note-taker/blob/main/public/assets/screenshots/notes.JPG)
+
+When user enters the new note title and the note's text, a Save icon appears in the navigation at the top of the page. 
+
+![save](https://github.com/marycpriyanka/note-taker/blob/main/public/assets/screenshots/save.JPG)
+
+Clicking the Save icon will save the new note entered.  The saved note will then appear in the left hand column with the other existing notes. 
+
+![saved](https://github.com/marycpriyanka/note-taker/blob/main/public/assets/screenshots/saved.JPG)
+
+User can delete any existing note by clicking on the Delete icon next to the respective note title in the list in the left hand column. If user clicks on an existing note in the left hand column, that note will appear in the right hand column. When the Write icon or the + icon in the navigation at the top of the page is clicked, then user is presented with empty fields to enter a new note title and the note's text in the right hand column.
 
 ##  Technologies used
 

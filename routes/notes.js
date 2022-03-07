@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
             console.error(err);
         }
         else {
+            console.log(JSON.parse(data));
             res.json(JSON.parse(data));
         }
     });
@@ -41,18 +42,22 @@ router.post("/", (req, res) => {
                 // Add the new note
                 parsedData.push(newNote);
                 // Write updated notes back to the file
-                fs.writeFile("./db/db.json", JSON.stringify(parsedData, null, 4), (err) =>
-                    err ? console.error(err) : console.info("Successfully added note!"));          
+                fs.writeFile("./db/db.json", JSON.stringify(parsedData, null, 4), (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    else {
+                        const response = {
+                            status: "success",
+                            body: newNote
+                        };
+
+                        console.log("Successfully added note");
+                        res.status(201).json(response);
+                    }
+                });                      
             }
         });
-
-        // Returns the new note to the client
-        const response = {
-            status: "success",
-            body: newNote
-        };
-        console.log(response);
-        res.status(201).json(response);
     }
     else {
         res.error("Error in adding note");
@@ -73,7 +78,7 @@ router.delete("/:id", (req, res) => {
 
             // Checks whether there is a note with the given id
             const noteToDelete = parsedData.filter(note => note.note_id === noteId)
-            if(noteToDelete.length === 0) {
+            if (noteToDelete.length === 0) {
                 return res.json("No note with that id");
             }
 
@@ -81,7 +86,7 @@ router.delete("/:id", (req, res) => {
             const updatedData = parsedData.filter(note => note.note_id !== noteId);
 
             // Rewrite the notes to db.json file
-            fs.writeFile("./db/db.json", JSON.stringify(updatedData, null, 4), err => 
+            fs.writeFile("./db/db.json", JSON.stringify(updatedData, null, 4), err =>
                 err ? console.error(err) : console.log("Successfully updated")
             );
 

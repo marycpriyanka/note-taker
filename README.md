@@ -7,17 +7,12 @@ Note Taker is an application used to write, save and delete notes. This is very 
 
 ## Table of Contents 
 
-- [Installation](#installation)
 - [Usage](#usage)
 - [Technologies used](#technologies-used)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Deployed link](#deployed-link)
 - [Questions](#questions)
-
-## Installation
-
-Install express and uuid from npm using the commands 'npm i express' and 'npm i uuid'
 
 ## Usage
 

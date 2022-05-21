@@ -7,12 +7,22 @@ Note Taker is an application used to write, save and delete notes. This is very 
 
 ## Table of Contents 
 
+- [Installation](#installation)
 - [Usage](#usage)
 - [Technologies used](#technologies-used)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Deployed link](#deployed-link)
 - [Questions](#questions)
+
+## Installation
+
+This program can be run through a browser using the link to the deployed application. Alternatively, to run this application locally you will need to:
+
+- Clone this repository to receive all of the files
+- Run "npm install" in the command line of your terminal to set up all of the dependencies
+- Run "node server" to start the application's connection
+- Go to the url of the application (http//:localhost:3001) to begin using it
 
 ## Usage
 

@@ -56,7 +56,7 @@ Note Taker is available under the MIT License.
 
 Contributions and ideas are welcome. Before submitting an issue, please take a moment to look over the contributing guidelines in https://www.contributor-covenant.org/ . Before submitting pull requests, ensure the following:
 
-- Fork the repo and create your branch from master.
+- Fork the repo and create your branch from main.
 - Test your code.
 
 ## Deployed link
